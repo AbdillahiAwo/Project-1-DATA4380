@@ -31,8 +31,10 @@
   
 #### Data Visualization
 
-- Histograms showed skew in features like glucose and insulin
-  
+-I used a heatmap to visualize the correlations between features, which helped identify which variables, like Glucose and BMI, had the strongest relationships with the diabetes outcome.
+
+  ![download](https://github.com/user-attachments/assets/84c2a089-6c5f-4b7d-85f0-9ff72f0b52f7)
+
 
 ### Problem Formulation
 
