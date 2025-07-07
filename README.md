@@ -4,7 +4,7 @@
 
 ## Overview
 
-The task is to predict the likelihood of diabetes in individuals who have experienced at least one pregnancy using a structured dataset with health measurements. We treat this as a binary supervised classification problem. My approach involves cleaning the dataset, selecting relevant features, scaling the data, and training a KNN model to classify individuals based on nearest neighbors in the feature space. The best model achieved approximately 79% accuracy and an AUC of 0.84 on the test set, indicating strong performance with a simple algorithm on a small dataset.
+The task is to predict the likelihood of diabetes in individuals who have experienced at least one pregnancy using a structured dataset with health measurements. We treat this as a binary supervised classification problem. My approach involves cleaning the dataset, selecting relevant features, scaling the data, and training a KNN model to classify individuals based on nearest neighbors in the feature space. The best model achieved approximately 82% accuracy and an AUC of 0.90 on the test set, indicating strong performance with a simple algorithm on a small dataset.
 
 ## Summary of Workdone
 
@@ -60,9 +60,9 @@ This heatmap shows that glucose has the strongest link to diabetes outcome (0.49
  * Hyperparameters tuned manually via cross-validation (choosing best k)
 
 ### Performance Comparison
-Model	                 Accuracy	  AUC
-KNN                    0.82       0.90
-Logisitcal Regression  0.77       0.84
+Model	                 
+KNN Accuracy 0.82, AUC 0.90
+Logisitcal Regression Accuracy 0.77, AUC 0.84
 ### Conclusions
 
 * Both models performed well, with KNN providing the best accuracy and AUC.
