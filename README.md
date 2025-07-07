@@ -34,8 +34,12 @@ Histograms compared the distribution of each feature across diabetic vs. non-dia
 ![download](https://github.com/user-attachments/assets/d40bd7fa-4d2e-43cd-ac3a-250182467a0d)
 ![download-1](https://github.com/user-attachments/assets/e5851abe-b828-4cc1-8b93-5f05091a2fe0)
 ![download-2](https://github.com/user-attachments/assets/e9d57d4e-444c-4636-9357-b5384ae2daa9)
+
 These graphs show that diabetic individuals (orange) generally have higher glucose levels, more pregnancies, and slightly higher Diabetes Pedigree Function values compared to non-diabetics (blue), highlighting key differences between the two groups.
+
 A heatmap was used to visualize correlations, revealing strong correlation between Glucose and Outcome
+
+This heatmap shows that glucose has the strongest link to diabetes outcome (0.49), with other notable correlations like age with pregnancies (0.55) and BMI with skin thickness (0.5).
 ![download-4](https://github.com/user-attachments/assets/ee13919f-20ac-4d9c-a971-91eace6bb53d)
 
 ### Problem Formulation
