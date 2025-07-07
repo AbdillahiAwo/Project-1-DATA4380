@@ -1,19 +1,18 @@
 # Diabetes Prediction
 
-* This project applies multiple machine learning models to predict diabetes in pregnant individuals using health metrics from the Diabetes Dataset.
+* This repository applies K-Nearest Neighbors (KNN) to a diabetes prediction dataset filtered for pregnant individuals, using data from the https://www.kaggle.com/datasets/mathchi/diabetes-data-set.*
 
 ## Overview
 
-  * **Definition of the tasks / challenge**  The objective is to classify whether a pregnant individual has diabetes based on features such as glucose levels, insulin, BMI, age, blood pressure, and others.
-  * **Your approach** We approach this as a binary classification problem. After filtering the dataset for individuals with pregnancies greater than zero, we cleaned the data, scaled the features, and trained multiple models: Logistic Regression (baseline), Random Forest, and XGBoost. We used SMOTE to address class imbalance and employed cross-validation and ROC AUC to evaluate model performance.
-  * **Summary of the performance achieved** Logistic Regression achieved a test accuracy of approximately 78% and an AUC of 0.83. Random Forest and XGBoost outperformed it, with XGBoost reaching an AUC above 0.86. Learning curves showed good generalization with minimal overfitting.
+The task is to predict the likelihood of diabetes in individuals who have experienced at least one pregnancy using a structured dataset with health measurements. We treat this as a binary supervised classification problem. My approach involves cleaning the dataset, selecting relevant features, scaling the data, and training a KNN model to classify individuals based on nearest neighbors in the feature space. The best model achieved approximately 79% accuracy and an AUC of 0.84 on the test set, indicating strong performance with a simple algorithm on a small dataset.
+
 ## Summary of Workdone
 
 ### Data
 
 * Data:
   * Type: Tabular data in CSV format.
-    * Input: CSV file with medical measurements including glucose, insulin, BMI, blood pressure, age, etc
+    * Input: 8 numeric features including Glucose, BMI, Age, and Pregnancies
     * Output:  Binary variable (Outcome) indicating presence of diabetes.
   * Size: 768 instances (before filtering)
   * Instances 650 pregnant individuals (After filtering)
@@ -30,11 +29,13 @@
 * Used SMOTE to balance classes in the training data
   
 #### Data Visualization
-
--I used a heatmap to visualize the correlations between features, which helped identify which variables, like Glucose and BMI, had the strongest relationships with the diabetes outcome.
-
-  ![download](https://github.com/user-attachments/assets/84c2a089-6c5f-4b7d-85f0-9ff72f0b52f7)
-
+Histograms compared the distribution of each feature across diabetic vs. non-diabetic outcomes
+![download-3](https://github.com/user-attachments/assets/c9d922b4-09c4-4035-be36-b761a38688a1)
+![download](https://github.com/user-attachments/assets/d40bd7fa-4d2e-43cd-ac3a-250182467a0d)
+![download-1](https://github.com/user-attachments/assets/e5851abe-b828-4cc1-8b93-5f05091a2fe0)
+![download-2](https://github.com/user-attachments/assets/e9d57d4e-444c-4636-9357-b5384ae2daa9)
+A heatmap was used to visualize correlations, revealing strong correlation between Glucose and Outcome
+![download-4](https://github.com/user-attachments/assets/ee13919f-20ac-4d9c-a971-91eace6bb53d)
 
 ### Problem Formulation
 
@@ -42,26 +43,22 @@
   * Input: 8 numerical features (Glucose, BloodPressure, Insulin, BMI, etc.)
   * Output: Binary classification (0 = non-diabetic, 1 = diabetic)
   * Models
-    * Logistic Regression (baseline model)
-    * Random Forest Classifier
-    * XGBoost Classifier
-  * Logistic Regression: max_iter=1000
-  * Random Forest: Tuned n_estimators, max_depth, min_samples_split
-  * XGBoost: Used default settings with early stopping in advanced stages
+    *K-Nearest Neighbors (KNN)
+       *Tuned using n_neighbors from 1–20
+       *Chosen for its suitability with small datasets and interpretability
+
+### Training
+ * Environment: Google Colab (default CPU)
+ * Training time: Instantaneous (non-iterative training)
+ * KNN requires no training phase; instead, it stores the training data
+ * Hyperparameters tuned manually via cross-validation (choosing best k)
 
 ### Performance Comparison
-
-Model	Accuracy
-Logistic Regression	~78%	
-Random Forest	~81%	
-XGBoost	~83%	
-
+Model	                 Accuracy	  AUC
+KNN                    0.82       0.90
+Logisitcal Regression  0.77       0.84
 ### Conclusions
 
-* All models performed well, with XGBoost providing the best accuracy and AUC.
+* Both models performed well, with KNN providing the best accuracy and AUC.
 * Feature scaling and class balancing (SMOTE) improved model stability.
 * Glucose and BMI were key predictors, while Pregnancies had moderate positive correlation with diabetes outcome.
-
-### Future Work
-
-* Tune hyperparameters for XGBoost more deeply
