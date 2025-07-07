@@ -30,12 +30,13 @@ The task is to predict the likelihood of diabetes in individuals who have experi
   
 #### Data Visualization
 Histograms compared the distribution of each feature across diabetic vs. non-diabetic outcomes
+
+These graphs show that diabetic individuals (orange) generally have higher glucose levels, more pregnancies, and slightly higher Diabetes Pedigree Function values compared to non-diabetics (blue), highlighting key differences between the two groups.
+
 ![download-3](https://github.com/user-attachments/assets/c9d922b4-09c4-4035-be36-b761a38688a1)
 ![download](https://github.com/user-attachments/assets/d40bd7fa-4d2e-43cd-ac3a-250182467a0d)
 ![download-1](https://github.com/user-attachments/assets/e5851abe-b828-4cc1-8b93-5f05091a2fe0)
 ![download-2](https://github.com/user-attachments/assets/e9d57d4e-444c-4636-9357-b5384ae2daa9)
-
-These graphs show that diabetic individuals (orange) generally have higher glucose levels, more pregnancies, and slightly higher Diabetes Pedigree Function values compared to non-diabetics (blue), highlighting key differences between the two groups.
 
 A heatmap was used to visualize correlations, revealing strong correlation between Glucose and Outcome
 
